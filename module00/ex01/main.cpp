@@ -16,7 +16,7 @@ int main()
     while(true)
     {
         std::string command;
-        std::cout<< "phonebook> ";
+        std::cout<< "Phonebook> ";
         std::getline(std::cin, command);
         if (command == "ADD")
             std::cout<< "ADD Founded"<< '\n';
