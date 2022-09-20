@@ -1,4 +1,5 @@
 #include <iostream>
+
 void Chart(std::string cmd)
 {
     std::cout<< "\e[0;31m*                INVALID COMMAND !!!!             *\033[0;32m" << '\n';
