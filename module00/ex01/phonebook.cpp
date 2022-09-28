@@ -8,8 +8,8 @@ void alert_msg()
 
 void PhoneBook::add_contact()
 {
-    Contact cnt;
-    _string fname, lname, nickname, secret;
+    Contact contact;
+    _string fname, lname, nickname, phone, secret;
     do{
         std::cout << "Enter The First Name : ";
         if(!std::getline(std::cin, fname))
@@ -18,6 +18,7 @@ void PhoneBook::add_contact()
             alert_msg();
     }
     while(fname.empty());
+    contact.setFirstName(fname);
 
     do{
         std::cout << "Enter The Last Name : ";
@@ -27,6 +28,8 @@ void PhoneBook::add_contact()
             alert_msg();
     }
     while(lname.empty());
+    contact.setLastName(lname);
+    
     do{
         std::cout << "Enter The Nickname : ";
         if (!std::getline(std::cin, nickname))
@@ -35,6 +38,18 @@ void PhoneBook::add_contact()
             alert_msg();
     }
     while(nickname.empty());
+    contact.setNickName(nickname);
+
+    do{
+        std::cout << "Enter The Phone Number : ";
+        if(!std::getline(std::cin, phone))
+            exit(1);
+        if(phone.empty())
+            alert_msg();
+    }
+    while(phone.empty());
+    contact.setPhoneNumber(phone);
+
     do{
         std::cout << "Enter The Darkest Secret : ";
         if(!std::getline(std::cin, secret))
@@ -43,4 +58,5 @@ void PhoneBook::add_contact()
             alert_msg();
     }
     while(secret.empty());
+    contact.setDarkestSecret(secret);
 }
