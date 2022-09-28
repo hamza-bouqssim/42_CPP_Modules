@@ -1,22 +1,46 @@
 #include "phonebook.hpp"
 #include <string>
 #include <iostream>
-
-PhoneBook::PhoneBook() {
-    //not done yet just to avoid the compiling error
-	std::cout << "_";
+void alert_msg()
+{
+    std::cout << "\e[0;31m|-- this field can't be empty --|\e[0m" << std::endl;
 }
 
 void PhoneBook::add_contact()
 {
+    Contact cnt;
     _string fname, lname, nickname, secret;
-    std::cout << "Enter The First Name : ";
-    std::getline(std::cin, fname);
-    std::cout << "Enter The Last Name : ";
-    std::getline(std::cin, lname);
-    std::cout << "Enter The Nickname : ";
-    std::getline(std::cin, nickname);
-    std::cout << "Enter The Darkest Secret : ";
-    std::getline(std::cin, secret);
-    std::cout << "you've entered this values :     "<< fname << ' '<< lname << ' ' << nickname << ' ' << secret << ' ' << std::endl;
+    do{
+        std::cout << "Enter The First Name : ";
+        if(!std::getline(std::cin, fname))
+                exit(1);
+        if(fname.empty())
+            alert_msg();
+    }
+    while(fname.empty());
+
+    do{
+        std::cout << "Enter The Last Name : ";
+        if(!std::getline(std::cin, lname))
+            exit(1);
+        if(lname.empty())
+            alert_msg();
+    }
+    while(lname.empty());
+    do{
+        std::cout << "Enter The Nickname : ";
+        if (!std::getline(std::cin, nickname))
+            exit(1);
+        if (nickname.empty())
+            alert_msg();
+    }
+    while(nickname.empty());
+    do{
+        std::cout << "Enter The Darkest Secret : ";
+        if(!std::getline(std::cin, secret))
+            exit(1);
+        if(secret.empty())
+            alert_msg();
+    }
+    while(secret.empty());
 }

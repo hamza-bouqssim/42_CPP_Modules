@@ -22,7 +22,9 @@ int main(void)
     {
         std::string command;
         std::cout<< "Phonebook> ";
-        std::getline(std::cin, command);
+
+        if(!std::getline(std::cin, command))
+            exit(1);
         if (command == "ADD")
             t_PhoneBook.add_contact();
         else if (command == "SEARCH")
