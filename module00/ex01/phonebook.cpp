@@ -1,9 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/29 20:19:21 by hbouqssi          #+#    #+#             */
+/*   Updated: 2022/09/29 21:51:10 by hbouqssi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "phonebook.hpp"
 #include <string>
 #include <iostream>
 void alert_msg()
 {
     std::cout << "\e[0;31m|-- this field can't be empty --|\e[0m" << std::endl;
+}
+
+PhoneBook::PhoneBook(){
+    index = 0;
+}
+std::string truncat_text(std::string word, int width)
+{
+	if ((int)word.length() > width)
+		return (word.substr(0, width - 1) + ".");
+	else if ((int)word.length() < width)
+        return (std::string(10 - (int)word.length(), ' ') + word);
+	return (word);
 }
 
 void PhoneBook::add_contact()
@@ -59,4 +83,26 @@ void PhoneBook::add_contact()
     }
     while(secret.empty());
     contact.setDarkestSecret(secret);
+    if(index == 7)
+        index = 0;
+    contacts[(index++) % 8] = contact;
+}
+
+void PhoneBook::search_contacts(){
+    
+    std::cout << std::string(45, '-') << std::endl;
+    std::cout << '|' << std::setw(10) << "id"
+    << '|' << std::setw(10) << "firstname"
+    << '|' << std::setw(10) << "lastname"
+    << '|' << std::setw(10) << "nickname" << '|' << std::endl;
+    std::cout << std::string(45, '-') << std::endl;
+    
+    for(int i = 0; i < 8; i++)
+    {
+        std::cout << "|" << std::setw(10) << i <<"|" ;
+        std::cout << truncat_text(contacts[i].getFirstName(), 10) << '|'
+        << truncat_text(contacts[i].getLastName(), 10) << '|'
+        << truncat_text(contacts[i]. getNickname(), 10) <<  '|' << std::endl;
+    }
+    std::cout << std::string(45, '-') << std::endl;
 }

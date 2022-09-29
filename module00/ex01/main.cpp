@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/29 20:19:04 by hbouqssi          #+#    #+#             */
+/*   Updated: 2022/09/29 20:19:05 by hbouqssi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include "phonebook.hpp"
 #include "contact.hpp"
@@ -28,7 +40,7 @@ int main(void)
         if (command == "ADD")
             t_PhoneBook.add_contact();
         else if (command == "SEARCH")
-            std::cout<< "SRch Founded"<< '\n';
+            t_PhoneBook.search_contacts();
         else if (command == "EXIT")
             exit(0);
         else
