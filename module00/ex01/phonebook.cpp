@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 20:19:21 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/10/02 19:14:04 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/10/02 20:41:44 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ void PhoneBook::search_contacts(){
         exit(1);
     
     id = std::atoi(s_id.c_str());
-    if(id <= index)
+    if(id <= index && id >= 0)
     {
         Contact contact = this->contacts[id];
         std::cout << std::endl;
