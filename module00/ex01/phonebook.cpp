@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 20:19:21 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/10/01 20:10:16 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/10/02 19:14:04 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ PhoneBook::PhoneBook(){
     index = -1;
 }
 
-std::string truncat_text(std::string word, int width)
+std::string truncate(std::string word, int width)
 {
 	if ((int)word.length() > width)
 		return (word.substr(0, width - 1) + ".");
@@ -29,16 +29,7 @@ std::string truncat_text(std::string word, int width)
 	return (word);
 }
 
-// int ft_stoi(std::string str)
-// {
-//     int i = 0;
-//     while(str >= '0' && str <= '9')
-//     {
-//         i = i * 10 + ( str - '0');
-//         str++;
-//     }
-//     return i;
-// }
+
 void PhoneBook::add_contact()
 {
     Contact contact;
@@ -98,6 +89,7 @@ void PhoneBook::add_contact()
 }
 
 void PhoneBook::search_contacts(){
+    
     //display all contacts:
     int i = -1;
     std::cout << std::string(45, '-') << std::endl;
@@ -111,9 +103,9 @@ void PhoneBook::search_contacts(){
     {
         std::cout << std::string(45, '-') << std::endl;
         std::cout << "|" << std::setw(10) << i << '|'
-        << truncat_text(contacts[i].getFirstName(), 10) << '|'
-        << truncat_text(contacts[i].getLastName(), 10) << '|'
-        << truncat_text(contacts[i]. getNickname(), 10) <<  '|' << std::endl;
+        << truncate(contacts[i].getFirstName(), 10) << '|'
+        << truncate(contacts[i].getLastName(), 10) << '|'
+        << truncate(contacts[i]. getNickname(), 10) <<  '|' << std::endl;
     }
     std::cout << std::string(45, '-') << std::endl;
     
@@ -121,17 +113,23 @@ void PhoneBook::search_contacts(){
     int id;
     _string s_id;
     std::cout << "search a specific id :";
-    
+        
     if(!std::getline(std::cin, s_id))
         exit(1);
-        
+    
     id = std::atoi(s_id.c_str());
-    Contact contact = this->contacts[id];
-    std::cout << std::endl;
-    std::cout <<  "first_name: " << contacts[id].getFirstName() << std::endl;
-    std::cout <<  "last_name: " << contacts[id].getLastName() << std::endl;
-    std::cout <<  "nickname: " << contacts[id].getNickname() << std::endl;
-    std::cout <<  "phone_number: " << contacts[id].getPhoneNumber() << std::endl;
-    std::cout <<  "darkest_secret: " << contacts[id].getDarkestSecret() << std::endl;
-    std::cout << std::endl;
+    if(id <= index)
+    {
+        Contact contact = this->contacts[id];
+        std::cout << std::endl;
+        std::cout <<  "first_name: " << contacts[id].getFirstName() << std::endl;
+        std::cout <<  "last_name: " << contacts[id].getLastName() << std::endl;
+        std::cout <<  "nickname: " << contacts[id].getNickname() << std::endl;
+        std::cout <<  "phone_number: " << contacts[id].getPhoneNumber() << std::endl;
+        std::cout <<  "darkest_secret: " << contacts[id].getDarkestSecret() << std::endl;
+        std::cout << std::endl;
+        
+    }
+    else
+        std::cout << "out of range !! " << std::endl;
 }
