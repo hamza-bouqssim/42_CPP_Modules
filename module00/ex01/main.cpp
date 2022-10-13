@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 20:19:04 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/09/29 20:19:05 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/10/02 21:47:08 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int main(void)
     PhoneBook t_PhoneBook = PhoneBook();
     while(true)
     {
-        std::string command;
+        _string command;
         std::cout<< "Phonebook> ";
 
         if(!std::getline(std::cin, command))

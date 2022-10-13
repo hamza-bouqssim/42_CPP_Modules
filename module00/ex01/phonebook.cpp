@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 20:19:21 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/10/02 20:41:44 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/10/10 17:43:27 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ std::string truncate(std::string word, int width)
         return (std::string(10 - (int)word.length(), ' ') + word);
 	return (word);
 }
-
 
 void PhoneBook::add_contact()
 {
@@ -131,5 +130,5 @@ void PhoneBook::search_contacts(){
         
     }
     else
-        std::cout << "out of range !! " << std::endl;
+        std::cout << "\e[0;31m           out of range !! \e[0m" << std::endl;
 }

@@ -5,6 +5,8 @@
 class Zombie{
         _string name;
     public:
+        Zombie(_string _name);
+        ~Zombie();
         void announce(void);
 };
 
