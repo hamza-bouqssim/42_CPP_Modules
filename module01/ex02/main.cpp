@@ -6,11 +6,11 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 00:26:37 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/10/16 00:48:17 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/10/17 10:22:58 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iostream"
+#include <iostream>
 int main()
 {
     std::string _string = "HI THIS IS BRAIN";
@@ -24,4 +24,5 @@ int main()
     std::cout << "The value of the string variable : " << _string << std::endl;
     std::cout << "The value Pointed to by stringPTR : " << *stringPTR << std::endl;
     std::cout << "The value Pointed to by stringREF : " << stringREF << std::endl;
+    
 }
