@@ -5,8 +5,11 @@
 #define _string std::string
 class HumanB{
     _string name;
-    Weapon weapon;
+    Weapon *weapon;
     public:
     void attack();
+    void setWeapon(Weapon &weapon);
+    HumanB(_string name);
+    ~HumanB();
 };
 #endif

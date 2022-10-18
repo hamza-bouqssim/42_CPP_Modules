@@ -5,9 +5,9 @@
 #define _string std::string
 class HumanA{
     _string name;
-    Weapon weapon;
+    Weapon &weapon;
     public:
-    HumanA(_string name, Weapon weapon);
+    HumanA(_string name, Weapon &weapon);
     ~HumanA();
     void attack();
 };
