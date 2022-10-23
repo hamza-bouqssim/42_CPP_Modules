@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+
 int main(int argc, char **argv)
 {
     if (argc != 4)
@@ -17,9 +18,17 @@ int main(int argc, char **argv)
         return 0;
     }
     std::ofstream OutFile(filename + ".replace");
-    std::string lines;
-    while(getline(inFile, lines))
+    if(!OutFile)
     {
-        OutFile << lines << std::endl;
+        std::cout << "Failed !" << std::endl;
+        return 0;
     }
+
+    std::string lines, jLines = "", str;
+    while(getline(inFile, lines))
+        jLines += lines + '\n';
+    int i = jLines.find(s1);
+    str = jLines.substr(0, i) + s2 + jLines.substr(i + s1.length(), -1);
+    OutFile << str; 
+    
 }
