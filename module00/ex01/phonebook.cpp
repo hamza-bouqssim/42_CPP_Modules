@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 20:19:21 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/10/10 17:43:27 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/10/25 15:24:11 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,11 @@ void PhoneBook::search_contacts(){
         
     if(!std::getline(std::cin, s_id))
         exit(1);
+    if(s_id < "0" || s_id > "9")
+    {
+        std::cout << "Expecting A Digit!" << std::endl;
+        return ;
+    }
     
     id = std::atoi(s_id.c_str());
     if(id <= index && id >= 0)

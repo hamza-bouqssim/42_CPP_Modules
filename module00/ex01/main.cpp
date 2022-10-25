@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 20:19:04 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/10/02 21:47:08 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/10/25 15:07:42 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,16 @@ void Chart()
     std::cout<< "*         \033[0;32m[ EXIT : Leaving The Program ]          *\e[0m"  << '\n';
 }
 
-int main(void)
+int main (void)
 {
     PhoneBook t_PhoneBook = PhoneBook();
+    
     while(true)
     {
         _string command;
         std::cout<< "Phonebook> ";
 
-        if(!std::getline(std::cin, command))
-            exit(1);
+        std::getline(std::cin, command);
         if (command == "ADD")
             t_PhoneBook.add_contact();
         else if (command == "SEARCH")

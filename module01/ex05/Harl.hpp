@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 18:36:34 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/10/23 18:36:35 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/10/23 19:49:35 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ class Harl{
         void error(void);
     public:
         void complain(_string level);
+        Harl();
 };
 #endif 
