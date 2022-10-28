@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 18:36:43 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/10/23 20:01:00 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/10/28 20:49:31 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,16 @@ void Harl::warning()
 void Harl::error()
 {
     std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
+}
+
+typedef void(Harl::*PtrToMem)();
+
+void Harl::complain(_string level){
+    PtrToMem ptm[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+    _string levels[4] = {"debug", "info", "warning", "error"};
+    int i = -1;
+    while(++i < 4 && levels[i] != level);
+   
+    if (levels[i] == level)
+        (this->*ptm[i])();
 }
