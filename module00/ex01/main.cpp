@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 20:19:04 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/10/25 15:07:42 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/10/29 02:06:43 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ int main (void)
         _string command;
         std::cout<< "Phonebook> ";
 
-        std::getline(std::cin, command);
+        if (!std::getline(std::cin, command))
+            exit(1);
         if (command == "ADD")
             t_PhoneBook.add_contact();
         else if (command == "SEARCH")
