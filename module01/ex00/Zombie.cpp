@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 14:26:29 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/10/26 20:07:44 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/10/29 18:20:43 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,5 @@ void Zombie::announce(void)
 
 Zombie::~Zombie()
 {
-    std::cout << std::endl;
-    std::cout << "The Zombie is Destroyed Succefully !" << std::endl;
+    std::cout << this->name << " The Zombie is Destroyed Succefully !" << std::endl;
 }

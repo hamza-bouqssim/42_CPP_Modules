@@ -6,7 +6,7 @@
 #    By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/13 18:44:33 by hbouqssi          #+#    #+#              #
-#    Updated: 2022/10/13 18:47:38 by hbouqssi         ###   ########.fr        #
+#    Updated: 2022/10/30 00:46:38 by hbouqssi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ $(NAME): $(OBJS)
 
 all: $(NAME)
 
-%.o:%.cpp
+%.o:%.cpp Zombie.hpp
 		@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

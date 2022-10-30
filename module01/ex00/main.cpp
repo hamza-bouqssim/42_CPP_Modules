@@ -6,15 +6,15 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 18:55:05 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/10/13 19:28:41 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/10/29 21:56:19 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 int main()
 {
-    Zombie z1 = Zombie("Foo");
-    z1.announce();
+    Zombie *z1 = newZombie("Foo");
+    z1->announce();
     randomChump("Boo");
-    
+    delete z1;
 }
