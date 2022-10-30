@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 19:35:19 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/10/27 00:26:06 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/10/29 18:07:27 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ class Zombie{
         _string name;
     public:
         Zombie();
-        //Zombie(_string _name);
         ~Zombie();
         void announce(void);
         _string getname();

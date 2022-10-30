@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 20:22:42 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/10/16 20:23:01 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/10/30 19:20:37 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ int main()
     club.setType("some other type of club");
     jim.attack();
     }
+    
     return 0;
 }
