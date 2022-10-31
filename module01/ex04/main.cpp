@@ -26,6 +26,11 @@ int main(int argc, char **argv)
     std::string s2 = argv[3];
     std::ifstream inFile(filename);
     std::string lines, jLines = "", str;
+    if(s1.empty() || s2.empty())
+    {
+        std::cout << "Empty String !" << std::endl;
+        return 0;
+    }
     if(s1 == s2)
     {
        std::ofstream OutpFile(filename + ".replace");
@@ -49,15 +54,17 @@ int main(int argc, char **argv)
         std::cout << "Failed !" << std::endl;
         return 0;
     }
-    while(getline(inFile, lines))
+    while (getline(inFile, lines))
         jLines += lines + '\n';
-    while (true)
+    int i = 0;
+    while (i < (int)jLines.length())
     {
-        int i = jLines.find(s1);
-        if (i == -1)
-            break ;
-        str = jLines.substr(0, i) + s2 + jLines.substr(i + s1.length(), -1);
-        jLines = str;
+
+        i = jLines.find(s1);
+        std::string erased = jLines.erase(i, s1.end());
+        str = erased.substr(0, i) + s2 + jLines.substr(i + s1.length(), -1);
+        erased = str;
+        i++;
     }
     OutFile << str;
 }
