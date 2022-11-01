@@ -6,17 +6,15 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 22:15:20 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/01 02:19:34 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/01 02:28:11 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
-#include <stdexcept>
 
 int main(int argc, char **argv)
 {
-	zac *l;
     if (argc != 4)
     {
         std::cout << "Verify Your arguments !!!" << std::endl;
@@ -25,9 +23,9 @@ int main(int argc, char **argv)
 
     std::string filename = argv[1];
     std::string s1(argv[2]);
-    std::string s2 = argv[3];
+    std::string s2(argv[3]);
     std::ifstream inFile(filename);
-    std::string lines, jLines = "", str;
+    std::string jLines = "", str;
     if(s1.empty() || s2.empty())
     {
         std::cout << "Empty String !" << std::endl;
@@ -56,4 +54,6 @@ int main(int argc, char **argv)
 		}
 		OutFile << jLines;
 	}
+	OutFile.close();
+	inFile.close();
 }
