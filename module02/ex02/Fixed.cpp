@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 05:23:14 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/09 06:28:43 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/09 23:00:49 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,15 @@ Fixed::Fixed()
     this->fixed_point = 0;
 }
 
-Fixed::Fixed(int _integer)
+Fixed::Fixed(int _nmbr)
 {
-	this->fixed_point = _integer << this->f_bits;
+	this->fixed_point = _nmbr << this->f_bits;
 }
 
-Fixed::Fixed(float _float)
+Fixed::Fixed(float _nmbr)
 {
-    this->fixed_point = roundf(_float * (1 << this->f_bits));
+    this->fixed_point = roundf(_nmbr * (1 << this->f_bits));
+
 }
 
 Fixed::Fixed(const Fixed &_Fixed)
@@ -93,17 +94,17 @@ bool Fixed::operator !=(const Fixed &_Fixed)
 //Arithmetic operators:
 Fixed Fixed::operator +(const Fixed &_Fixed)
 {
-    return Fixed(this->toFloat() / _Fixed.toFloat());
+    return Fixed(this->toFloat() + _Fixed.toFloat());
 }
 
 Fixed Fixed::operator -(const Fixed &_Fixed)
 {
-    return Fixed(this->toFloat() / _Fixed.toFloat());
+    return Fixed(this->toFloat() - _Fixed.toFloat());
 }
 
 Fixed Fixed::operator *(const Fixed &_Fixed)
 {
-   return Fixed(this->toFloat() / _Fixed.toFloat());
+   return Fixed(this->toFloat() * _Fixed.toFloat());
 }
 
 Fixed Fixed::operator /(const Fixed &_Fixed)
@@ -124,16 +125,17 @@ Fixed &Fixed::operator --()
 }
 
 //postfix:
-Fixed &Fixed::operator++(int)
+Fixed Fixed::operator++(int)
 {
+    Fixed temp(*this);
     this->fixed_point++;
-    return *this;
+    return temp;
 }
-Fixed &Fixed::operator--(int)
+Fixed Fixed::operator--(int)
 {
     Fixed temp(*this);
     this->fixed_point--;
-    return *this;
+    return temp;
 }
 
 //overloading insertion operator:

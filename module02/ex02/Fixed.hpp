@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 04:09:09 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/09 06:26:57 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/09 22:58:11 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class Fixed{
     
         //constructors:
         Fixed();
-        Fixed(const int _integer);
-        Fixed(const float _float);
+        Fixed(const int _nmbr);
+        Fixed(const float _nmbr);
         Fixed(const Fixed &_Fixed);
         ~Fixed();
         
@@ -49,8 +49,8 @@ class Fixed{
         Fixed &operator --();
         
         //postfix operator
-        Fixed &operator ++(int);
-        Fixed &operator --(int);
+        Fixed operator ++(int);
+        Fixed operator --(int);
         
         //member funcs:
         float toFloat(void) const;
