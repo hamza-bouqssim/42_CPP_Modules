@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 05:23:14 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/09 23:00:49 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/09 23:29:03 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,15 +48,6 @@ void Fixed::setRawBits(int const raw)
     this->fixed_point = raw;
 }
 
-int Fixed::toInt(void) const
-{
-    return (this->fixed_point >> this->f_bits);
-}
-
-float Fixed::toFloat(void) const
-{
-    return((float)this->fixed_point / 256);
-}
 //overloading  operators:
 //copy assignement operator:
 Fixed& Fixed::operator=(const Fixed &_Fixed)
@@ -143,4 +134,29 @@ std::ostream& operator << (std::ostream &output, const Fixed &_fixed)
 {
     output << _fixed.toFloat();
     return output;
+}
+//Member Functions:
+
+int Fixed::toInt(void) const
+{
+    return (this->fixed_point >> this->f_bits);
+}
+
+float Fixed::toFloat(void) const
+{
+    return((float)this->fixed_point / 256);
+}
+
+Fixed Fixed::max(Fixed _Fixed, Fixed _Fixed1)
+{
+    if(_Fixed > _Fixed1)
+        return _Fixed;
+    return _Fixed1;
+}
+
+Fixed Fixed::min(Fixed _Fixed, Fixed _Fixed1)
+{
+    if(_Fixed < _Fixed1)
+        return _Fixed;
+    return _Fixed1;
 }

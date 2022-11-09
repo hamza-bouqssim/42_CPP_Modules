@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 04:09:09 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/09 22:58:11 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/09 23:25:26 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ class Fixed{
         int toInt(void) const;
         int getRawBits() const;
         void setRawBits(int const raw);
+        static Fixed min(Fixed _Fixed, Fixed _Fixed1);
+        static Fixed max(Fixed _Fixed, Fixed _Fixed1);
 };
 std::ostream& operator << (std::ostream &output, const Fixed &_fixed);
 #endif
