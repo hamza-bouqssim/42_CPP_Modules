@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 05:23:14 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/09 06:01:45 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/09 06:28:43 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,30 +91,24 @@ bool Fixed::operator !=(const Fixed &_Fixed)
 }
 
 //Arithmetic operators:
-Fixed &Fixed::operator +(const Fixed &_Fixed)
+Fixed Fixed::operator +(const Fixed &_Fixed)
 {
-    this->toFloat() + _Fixed.toFloat();
-    return *this;
+    return Fixed(this->toFloat() / _Fixed.toFloat());
 }
-Fixed &Fixed::operator -(const Fixed &_Fixed)
+
+Fixed Fixed::operator -(const Fixed &_Fixed)
 {
-    this->toFloat() - _Fixed.toFloat();
-    return *this;
+    return Fixed(this->toFloat() / _Fixed.toFloat());
 }
-Fixed &Fixed::operator *(const Fixed &_Fixed)
+
+Fixed Fixed::operator *(const Fixed &_Fixed)
 {
-    this->toFloat() * _Fixed.toFloat();
-    return *this;
+   return Fixed(this->toFloat() / _Fixed.toFloat());
 }
-Fixed &Fixed::operator /(const Fixed &_Fixed)
+
+Fixed Fixed::operator /(const Fixed &_Fixed)
 {
-    this->toFloat() / _Fixed.toFloat();
-    return *this;
-}
-Fixed &Fixed::operator +(const Fixed &_Fixed)
-{
-    this->toFloat() + _Fixed.toFloat();
-    return *this;
+    return Fixed(this->toFloat() / _Fixed.toFloat());
 }
 
 //prefix:
@@ -132,13 +126,12 @@ Fixed &Fixed::operator --()
 //postfix:
 Fixed &Fixed::operator++(int)
 {
-    Fixed &temp = *this;
     this->fixed_point++;
     return *this;
 }
 Fixed &Fixed::operator--(int)
 {
-    Fixed &temp = *this;
+    Fixed temp(*this);
     this->fixed_point--;
     return *this;
 }

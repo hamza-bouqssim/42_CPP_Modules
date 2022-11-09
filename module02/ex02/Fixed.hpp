@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 04:09:09 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/09 05:57:59 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/09 06:26:57 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ class Fixed{
         bool operator !=(const Fixed &_Fixed);
         
         //arithmetic operators:
-        Fixed &operator +(const Fixed &_Fixed);
-        Fixed &operator -(const Fixed &_Fixed);
-        Fixed &operator *(const Fixed &_Fixed);
-        Fixed &operator /(const Fixed &_Fixed);
+        Fixed operator +(const Fixed &_Fixed);
+        Fixed operator -(const Fixed &_Fixed);
+        Fixed operator *(const Fixed &_Fixed);
+        Fixed operator /(const Fixed &_Fixed);
         
         //prefix operators
         Fixed &operator ++();
@@ -58,4 +58,5 @@ class Fixed{
         int getRawBits() const;
         void setRawBits(int const raw);
 };
+std::ostream& operator << (std::ostream &output, const Fixed &_fixed);
 #endif
