@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 05:23:14 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/09 23:29:03 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/10 16:11:46 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,9 @@ Fixed Fixed::operator *(const Fixed &_Fixed)
 
 Fixed Fixed::operator /(const Fixed &_Fixed)
 {
-    return Fixed(this->toFloat() / _Fixed.toFloat());
+    if (_Fixed.toFloat() != 0)
+        return Fixed(this->toFloat() / _Fixed.toFloat());
+    return 0;
 }
 
 //prefix:
