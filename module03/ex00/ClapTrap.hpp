@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 09:14:30 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/12 10:14:00 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/12 13:21:29 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,16 @@
 #define CLAPTRAP_HPP
 #include <iostream>
 class ClapTrap{
+	
     std::string name;
-	int Hit_Points = 10;
-	int Energy_point = 10;
-	int Attack_damage = 0;
+	unsigned int Hit_Points;
+	unsigned int Energy_point;
+	unsigned int Attack_damage;
+
 	public:
+	
 	ClapTrap();
+	ClapTrap(std::string _name);
 	ClapTrap(const ClapTrap &_ClapTrap);
 	ClapTrap &operator=(const ClapTrap &_ClapTrap);
 	~ClapTrap();

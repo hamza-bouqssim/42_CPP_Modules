@@ -6,7 +6,14 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 09:14:34 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/12 09:14:35 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/12 13:22:17 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ClapTrap.hpp"
+
+int main()
+{
+    
+    return 0;
+}
