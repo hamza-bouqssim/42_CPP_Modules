@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Claptrap.cpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 13:16:08 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/12 13:20:52 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/13 17:42:15 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,11 @@ ClapTrap::ClapTrap()
 };
 ClapTrap::~ClapTrap(){
     std::cout << "Destructor Called" << std::endl;
+};
+ClapTrap::ClapTrap(const ClapTrap &_Claptrap)
+{
+    std::cout << "Copy Construtor Called" << std::endl;
+    *this = _Claptrap;
 };
 ClapTrap::ClapTrap(std::string _name)
 {
