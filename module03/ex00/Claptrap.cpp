@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*   Claptrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 13:16:08 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/13 17:42:15 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/14 10:10:35 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,14 @@ ClapTrap::ClapTrap()
 ClapTrap::~ClapTrap(){
     std::cout << "Destructor Called" << std::endl;
 };
-ClapTrap::ClapTrap(const ClapTrap &_Claptrap)
+ClapTrap::ClapTrap(const ClapTrap &_ClapTrap)
 {
     std::cout << "Copy Construtor Called" << std::endl;
-    *this = _Claptrap;
+    // *this = _Claptrap;
+    this->name = _ClapTrap.name;
+    this->Hit_Points = _ClapTrap.Hit_Points;
+    this->Energy_point = _ClapTrap.Energy_point;
+    this->Attack_damage = _ClapTrap.Attack_damage;
 };
 ClapTrap::ClapTrap(std::string _name)
 {
