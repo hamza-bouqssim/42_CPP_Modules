@@ -6,31 +6,30 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 14:37:23 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/13 18:40:02 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/14 11:06:16 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
-
-int main(void) {
+#define N 40
+int main()
+{
+    ScavTrap _ScavTrap = ScavTrap("Hamza");
+    _ScavTrap.attack("Borat");
+    _ScavTrap.attack("Borat");
+    _ScavTrap.attack("Borat");
+    _ScavTrap.attack("Borat");
+    _ScavTrap.attack("Borat");
+    _ScavTrap.attack("Borat");
+    _ScavTrap.attack("Borat");
+    _ScavTrap.takeDamage(2);
     
-    ScavTrap robot("Jhon");
-    cp1->attack("tip");
-    cp1->attack("tip");
-    cp1->attack("tip");
-    cp1->attack("tip");
-    cp1->attack("tip");
-    cp1->attack("tip");
-    cp1->attack("tip");
-    cp1->attack("tip");
-    cp1->attack("tip");
-    cp1->attack("tip");
-    robot.guardGate();
-    robot.attack("Bob");
-    robot.beRepaired(10);
-    robot.takeDamage(10);
-    robot = ScavTrap("anOther");
-    robot.attack("unknown");
+    std::cout << "should ---- attack the  unknown " << N <<  " time" << std::endl;
+    for (int i = 0; i < N; i++)
+    {
+           _ScavTrap.attack("unknown");
+    }
+    _ScavTrap.guardGate();
     return 0;
 }

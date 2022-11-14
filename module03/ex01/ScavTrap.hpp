@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 15:53:15 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/13 16:11:44 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/14 11:01:46 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ class ScavTrap : public ClapTrap{
     ~ScavTrap();
     //member functions:
     void guardGate();
+    void attack(const std::string& target);
 };
 #endif
