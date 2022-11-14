@@ -6,11 +6,12 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 09:49:08 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/14 10:12:47 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/14 11:09:01 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
 int main()
 {
     ClapTrap _ClapTrap = ClapTrap("Hamza");
