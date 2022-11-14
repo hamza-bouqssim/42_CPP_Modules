@@ -6,11 +6,11 @@
 #    By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/14 12:02:18 by hbouqssi          #+#    #+#              #
-#    Updated: 2022/11/14 12:53:26 by hbouqssi         ###   ########.fr        #
+#    Updated: 2022/11/14 12:59:39 by hbouqssi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ClapTrap
+NAME = FragTrap
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 CC = c++
