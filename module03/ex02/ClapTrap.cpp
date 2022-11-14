@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 12:00:57 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/14 12:00:59 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/14 13:27:53 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ClapTrap::ClapTrap()
 {
-    std::cout << "Constructor Called" << std::endl;
+    std::cout << "Claptrap Constructor Called" << std::endl;
     this->name = "";
     this->Hit_Points = 10;
     this->Energy_point = 10;
@@ -22,12 +22,12 @@ ClapTrap::ClapTrap()
 };
 
 ClapTrap::~ClapTrap(){
-    std::cout << "Destructor Called" << std::endl;
+    std::cout << "Claptrap Destructor Called" << std::endl;
 };
 
 ClapTrap::ClapTrap(const ClapTrap &_ClapTrap)
 {
-    std::cout << "Copy Construtor Called" << std::endl;
+    std::cout << "Claptrap Copy Construtor Called" << std::endl;
     // *this = _Claptrap;
     this->name = _ClapTrap.name;
     this->Hit_Points = _ClapTrap.Hit_Points;
@@ -37,7 +37,7 @@ ClapTrap::ClapTrap(const ClapTrap &_ClapTrap)
 
 ClapTrap::ClapTrap(std::string _name)
 {
-    std::cout << "Parametrized Constructor Called" << std::endl;
+    std::cout << "Claptrap Parametrized Constructor Called" << std::endl;
     this->name = _name;
     this->Hit_Points = 10;
     this->Energy_point = 10;
@@ -46,7 +46,7 @@ ClapTrap::ClapTrap(std::string _name)
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &_ClapTrap)
 {
-    std::cout << "Copy Assignement Operator Called" << std::endl;
+    std::cout << "Claptrap Copy Assignement Operator Called" << std::endl;
     if(this != &_ClapTrap)
     {
         this->name = _ClapTrap.name;
