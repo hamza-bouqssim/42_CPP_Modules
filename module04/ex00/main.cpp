@@ -6,7 +6,13 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 20:25:20 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/15 20:25:21 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/16 13:00:00 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Animal.hpp"
+
+int main()
+{
+    return 0;
+}
