@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 20:25:20 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/16 15:03:30 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/16 15:55:48 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,11 @@ int main()
     i->makeSound(); //will output the cat sound!
     j->makeSound();
     meta->makeSound();
+    delete i;
+    delete j;
     std::cout << "Test for WrongAnimal && WrongCat" << std::endl;
     const WrongAnimal* WA = new WrongCat();
     WA->makeSound();
+    delete WA;
     return 0;
 }
