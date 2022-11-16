@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 20:25:17 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/15 20:25:18 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/16 13:31:41 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ class Dog : public Animal{
     Dog(const Dog &_Dog);
     Dog& operator=(const Dog &_Dog);
     ~Dog();
-    void makeSound();
+    void makeSound() const;
 };
 #endif

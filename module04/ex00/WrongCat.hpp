@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 14:46:01 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/16 14:47:48 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/16 15:11:54 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ class WrongCat : public WrongAnimal{
     WrongCat();
     WrongCat(const WrongCat &_WrongCat);
     WrongCat& operator=(const WrongCat &_WrongCat);
-    ~WrongCat();
+    virtual ~WrongCat();
     void makeSound() const;
 };
 #endif
