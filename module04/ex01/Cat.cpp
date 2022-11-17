@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 16:18:12 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/16 18:58:14 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/17 18:53:31 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,26 @@
 Cat::Cat()
 {
     this ->_Brain = new Brain();
-    std::cout << "Cat Constructor Called" << std::endl;
+    std::cout << "Cat:   Constructor Called" << std::endl;
 };
 
 Cat::~Cat()
 {
-    std::cout << "Cat Destructor Called" << std::endl;
+    std::cout << "Cat:   Destructor Called" << std::endl;
     delete this->_Brain;
 };
 
 Cat::Cat(const Cat &_Cat)
 {
-    std::cout << "Cat: Copy Constructor Called" << std::endl;
+    std::cout << "Cat:   Copy Constructor Called" << std::endl;
     this->_Brain = new Brain();
-    *this = _Cat;
+    this->type = _Cat.type;
 };
 
 Cat &Cat::operator=(const Cat &_Cat)
 {
 
-    std::cout << "Cat : Copy  Assingnement Operator Called" << std::endl;
+    std::cout << "Cat: Copy  Assingnement Operator Called" << std::endl;
     this->_Brain = _Cat._Brain;
     this->type = _Cat.type;
     return *this;
