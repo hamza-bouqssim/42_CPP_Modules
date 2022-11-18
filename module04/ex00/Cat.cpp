@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 20:25:07 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/18 12:43:25 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/18 13:02:28 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,5 @@ Cat &Cat::operator=(const Cat &_Cat)
 
 void Cat::makeSound() const
 {
-    std::cout << "Cat: is Miaoing" << std::endl;
+    std::cout << "Cat 🐱🐱🐱: is Miaoing" << std::endl;
 };

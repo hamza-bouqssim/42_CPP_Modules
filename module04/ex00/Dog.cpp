@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 20:25:14 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/18 12:51:40 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/18 12:58:22 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ Dog &Dog::operator=(const Dog &_Dog){
 };
 void Dog::makeSound() const
 {
-    std::cout << "Dog: is Barking" << std::endl;
+    std::cout << "Dog 🐶🐶🐶: is Barking" << std::endl;
 };
