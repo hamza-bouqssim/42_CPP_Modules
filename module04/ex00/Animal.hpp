@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 20:25:04 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/16 13:31:22 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/18 12:48:25 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ class Animal{
         virtual ~Animal();
         virtual void makeSound() const;
         std::string getType() const;
+        void setType(std::string _type);
 };
 #endif

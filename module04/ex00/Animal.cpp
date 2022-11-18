@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 20:25:01 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/16 13:36:10 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/18 12:50:26 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,8 @@ void Animal::makeSound() const
 std::string Animal::getType() const
 {
     return this->type;
+};
+void Animal::setType(std::string _type)
+{
+    this->type = _type;
 }

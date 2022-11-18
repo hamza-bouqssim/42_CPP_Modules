@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 20:25:14 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/16 13:35:18 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/18 12:51:40 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Dog::Dog()
 {
-    this->type = "dog";
+    this->type = "DOG";
     std::cout << "Dog Constructor Called" << std::endl;
 };
 

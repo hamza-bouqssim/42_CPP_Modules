@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 20:25:07 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/16 13:35:29 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/18 12:43:25 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Cat::Cat()
 {
-    this->type = "cat";
+    this->type = "CAT";
     std::cout << "Cat Constructor Called" << std::endl;
 };
 
