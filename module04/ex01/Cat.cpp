@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 16:18:12 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/17 18:53:31 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/19 12:08:11 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,18 @@ Cat::~Cat()
 Cat::Cat(const Cat &_Cat)
 {
     std::cout << "Cat:   Copy Constructor Called" << std::endl;
-    this->_Brain = new Brain();
     this->type = _Cat.type;
+    _Brain = new Brain;
+    *(this->_Brain) = *(_Cat._Brain);
 };
 
 Cat &Cat::operator=(const Cat &_Cat)
 {
 
     std::cout << "Cat: Copy  Assingnement Operator Called" << std::endl;
-    this->_Brain = _Cat._Brain;
     this->type = _Cat.type;
+    _Brain = new Brain;
+    *(this->_Brain) = *(_Cat._Brain);
     return *this;
 };
 
