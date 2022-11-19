@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 15:14:03 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/19 15:40:52 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/19 19:36:02 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,27 @@ Bureaucrat::~Bureaucrat()
 
 Bureaucrat::Bureaucrat(const Bureaucrat &_Bureaucrat)
 {
-	std::cout << "Copy Constructor Called" << std::endl:
+	(void)_Bureaucrat;
+	std::cout << "Copy Constructor Called" << std::endl;
 };
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &_Bureaucrat)
 {
+	(void)_Bureaucrat;
 	std::cout << "Copy Assingnement Operator Called" << std::endl;
 	return *this;
 };
-
-std::ofstream &operator<< (std::ofstream &output, const Bureaucrat &_Bureaucrat)
+std::string Bureaucrat::getName()const
 {
-	output << _Bureaucrat.grade;
+	return this->name;	
+};
+int Bureaucrat::getGrade() const
+{
+	return this->grade;
+};
+std::ostream &operator<< (std::ostream &output, const Bureaucrat &_Bureaucrat)
+{
+	output << _Bureaucrat.getGrade();
 	return output;
 };
 

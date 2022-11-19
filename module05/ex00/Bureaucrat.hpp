@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 15:14:00 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/19 15:38:24 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/19 19:34:12 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,8 @@ class Bureaucrat{
     ~Bureaucrat();
     
     //methods:
-    void setName(std::string _name);
-    std::string getName();
-    void setGrade(int _grade);
-    int getGrade();
+    std::string getName()const;
+    int getGrade() const;
     void incrementBureaucratGrade();
     void decrementBureaucratGrade();
     
