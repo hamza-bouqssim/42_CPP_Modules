@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 16:14:47 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/19 12:13:21 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/20 12:33:27 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,11 @@ int main()
     Animal  *Animals[2];
     Animals[0] = new Cat;
     Animals[1] = new Dog;
-
     delete Animals[0];
     delete Animals[1];
     Cat cat1;
     {
         Cat cat2 = cat1;
     }
-return 0;
+    return 0;
 }
