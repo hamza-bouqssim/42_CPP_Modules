@@ -1,3 +1,4 @@
+# What is Polymorphism (easy explanation)
 Polymorphism is to take more than one form.
 
 In real life, we, humans do it all the time. We become 'Brother', 'Father', 'Son', 'Husband'... etc. And all these have forms have different attributes associated.
@@ -16,8 +17,7 @@ So an object like a Shape can be a Rectangle, Circle or Hexagon. Each of these a
 Shape can have a method draw(), but it would draw (circle / rectangle / hexagon) depnding upon need. It will call the draw method of respective shape when it it in respective form. If Shape is a circle. It will call draw() of circle..so on.
 
 This ability to call the method or refer to property of an object depending on actual underlying type is called Polymorphism
--------------------------------------
-What is a Virtual Function in C++?
+# What is a Virtual Function in C++?
 A virtual function in C++ is a base class member function that you can redefine in a derived class to achieve polymorphism. You can declare the function in the base class using the virtual keyword. Once you declare the function in the base class, you can use a pointer or reference to call the virtual class and execute its virtual version in the derived class. Thus, it asks the compiler to determine the object’s type during run-time and create a function bind (late binding or dynamic linkage).
 
 A virtual function in C++ helps ensure you call the correct function via a reference or pointer. The C++ programming language allows you only to use a single pointer to refer to all the derived class objects. Since the pointer refers to all the derived objects, calling it will consistently execute the function in the base class. You can overcome this challenge with a virtual function in C++ as it helps execute the virtual version of the derived class, which is done at the run-time.
