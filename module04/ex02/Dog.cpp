@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 16:14:42 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/19 12:12:31 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/20 15:25:54 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ Dog &Dog::operator=(const Dog &_Dog){
 
     std::cout << "Dog: Copy  Assingnement Operator Called" << std::endl;
     this->type = _Dog.type;
+     if(this->_Brain)
+        delete _Brain;
     _Brain = new Brain;
     *(this->_Brain) = *(_Dog._Brain);
     return *this;

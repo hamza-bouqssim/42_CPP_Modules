@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 16:18:12 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/20 12:30:29 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/20 15:24:57 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ Cat &Cat::operator=(const Cat &_Cat)
 
     std::cout << "Cat: Copy  Assingnement Operator Called" << std::endl;
     this->type = _Cat.type;
+     if(this->_Brain)
+        delete _Brain;
     _Brain = new Brain;
     *(this->_Brain) = *(_Cat._Brain);
     return *this;
