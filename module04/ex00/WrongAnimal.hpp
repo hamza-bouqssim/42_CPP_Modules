@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 14:37:29 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/18 12:53:54 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/22 18:53:10 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class WrongAnimal{
         WrongAnimal();
         WrongAnimal(const WrongAnimal &_WrongAnimal);
         WrongAnimal& operator=(const WrongAnimal &_WrongAnimal);
-        virtual ~WrongAnimal();
+        ~WrongAnimal();
         void makeSound() const;
         std::string getType() const;
 };

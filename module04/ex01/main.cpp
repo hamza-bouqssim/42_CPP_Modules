@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 16:14:47 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/20 15:27:54 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/22 18:09:40 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "Brain.hpp"
 int main()
 {
-    
+    Cat cat1;
     const Animal* j = new Dog();
     const Animal* i = new Cat();
     delete j;//should not create a leak
@@ -29,6 +29,5 @@ int main()
     {
         Cat cat2 = cat1;
     }
-    
 return 0;
 }

@@ -6,14 +6,14 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 14:43:13 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/18 12:56:46 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/21 15:18:15 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongAnimal.hpp"
 WrongAnimal::WrongAnimal()
 {
-    this->type = " WrongAnimal";
+    this->type = "WrongAnimal";
     std::cout << "WrongAnimal Constructor Called" << std::endl;
 };
 
