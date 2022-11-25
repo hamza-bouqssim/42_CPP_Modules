@@ -32,7 +32,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &_Bureaucrat)
 	this->grade = _Bureaucrat.grade;
 	return *this;
 };
-std::string Bureaucrat::getName()const
+std::string Bureaucrat::getBureaucratName()const
 {
 	return this->name;	
 };

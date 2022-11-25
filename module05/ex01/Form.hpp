@@ -31,7 +31,7 @@ class Form{
         const char* what() const throw();
     };
     //Methods:
-    std::string getName() const;
+    std::string getFormName() const;
     bool getSign() const;
     int getGradeTosign() const;
     int getGradeToExec() const;

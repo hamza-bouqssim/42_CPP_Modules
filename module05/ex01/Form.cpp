@@ -1,4 +1,5 @@
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 Form::Form(const std::string _name, const int _gradeToSign, const int _gradeToExec):name(_name), sign(false) , gradeToSign(_gradeToSign), gradeToExec(_gradeToExec)
 {
     if(this->gradeToSign < 1)
@@ -8,7 +9,7 @@ Form::Form(const std::string _name, const int _gradeToSign, const int _gradeToEx
 
 };
 
-std::string Form::getName() const
+std::string Form::getFormName() const
 {
     return this->name;
 };
@@ -29,7 +30,7 @@ int Form::getGradeToExec() const
 };
 std::ostream &operator<<(std::ostream &output, const Form &_Form)
 {
-    output << _Form.getName() << ", "<< _Form.getGradeTosign() << std::endl;
+    output << _Form.getFormName() << ", "<< _Form.getGradeTosign() << std::endl;
     return output;
 }
 void Form::beSigned(Bureaucrat _Bureaucrat)
@@ -41,6 +42,10 @@ void Form::beSigned(Bureaucrat _Bureaucrat)
 }
 void Form::signForm()
 {
-
-}
+    Bureaucrat obj;
+    if(this->sign == true)
+        std::cout << obj.getBureaucratName() << " signed " << this->getFormName() << std::endl;
+    else
+        std::cout << obj.getBureaucratName() << " Could not Sign The " << this->getFormName() << std::endl;
+};
 Form::~Form(){};

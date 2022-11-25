@@ -38,7 +38,7 @@ class Bureaucrat{
         const char* what() const throw();
     };
     //methods:
-    std::string getName()const;
+    std::string getBureaucratName()const;
     int getGrade() const;
     void incrementBureaucratGrade();
     void decrementBureaucratGrade();
