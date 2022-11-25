@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 Bureaucrat::Bureaucrat(): name(""), grade(150)
 {
  };
@@ -70,9 +71,15 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
  {
 		return ("Grade Too High !");
  };
-
+ void Bureaucrat::signForm(Form &_Form)
+{
+	if(_Form.getSign())
+		std::cout << this->getBureaucratName() << " Signed " << _Form.getFormName();
+	else
+		std::cout << this->getBureaucratName() << " Couldn't Sign The " << _Form.getFormName() << " Because Of The Grade :" << _Form.getGradeTosign() << std::endl;
+};
 std::ostream &operator<< (std::ostream &output, const Bureaucrat &_Bureaucrat)
 {
-	output << _Bureaucrat.getName() << ", bureaucrat grade "<< _Bureaucrat.getGrade() << "." << std::endl;
+	output << _Bureaucrat.getBureaucratName() << ", bureaucrat grade "<< _Bureaucrat.getGrade() << "." << std::endl;
 	return output;
 };

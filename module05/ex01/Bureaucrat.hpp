@@ -14,6 +14,8 @@
 #define BUREAU_HPP
 #include <iostream>
 #include <exception>
+#include "Form.hpp"
+class Form;
 class Bureaucrat{
     private:
         const std::string name;
@@ -42,6 +44,7 @@ class Bureaucrat{
     int getGrade() const;
     void incrementBureaucratGrade();
     void decrementBureaucratGrade();
+    void signForm(Form &_Form);
     
 };
 std::ostream &operator<< (std::ostream &output, const Bureaucrat &_Bureaucrat);

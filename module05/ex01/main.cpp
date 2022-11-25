@@ -11,8 +11,23 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 int main()
 {
-   
+   try {
+		Bureaucrat	_Bureaucrat("Office" ,1);
+		Form	_Form("Mo3ahada", 25, 50);
+		try {
+			_Form.beSigned(_Bureaucrat);	
+		} 
+		catch (...)
+		{
+		}
+		_Bureaucrat.signForm(_Form);
+	} 
+	catch (const std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
     return 0;
 }
