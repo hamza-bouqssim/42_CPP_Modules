@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 15:14:03 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/26 18:32:24 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/27 17:26:02 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,18 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 	else
 		std::cout << this->getBureaucratName() << " Couldn't Sign The " << _Form.getFormName() << " Because Of The Grade : " << _Form.getGradeTosign() << std::endl;
 };
+void Bureaucrat::executeForm(Form const &_Form)
+{
+	try{
+		_Form.execute(*this);
+		std::cout << *this << " Executed " << _Form.getFormName() << std::endl;
+	}
+	catch(std::exception &e){
+		std::cout << e.what() << std::endl;
+	}
+};
 std::ostream &operator<< (std::ostream &output, const Bureaucrat &_Bureaucrat)
 {
-	output << _Bureaucrat.getBureaucratName() << ", Bureaucrat Grade "<< _Bureaucrat.getGrade() << "." << std::endl;
+	output << _Bureaucrat.getBureaucratName();
 	return output;
 };

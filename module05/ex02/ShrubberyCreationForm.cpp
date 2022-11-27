@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 16:07:56 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/26 19:11:23 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/27 17:30:50 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,20 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 {
     if(!ShrubberyCreationForm::getSign() && executor.getGrade() > ShrubberyCreationForm::getGradeTosign())
-        throw GradeTooLowException("Cannot Execute The Form");
+        throw GradeTooLowException();
     std::ofstream Outfile(executor.getBureaucratName() + "_shrubbery");
     if(!Outfile){std::cout << "Failed !" << std::endl; exit(0);}
     Outfile << "\
+        #\n\
        ###\n\
-      #o###\n\
-    #####o###\n\
-   #o###|#/###\n\
-    ####|/#o#\n\
-     # }|{  #\n\
+      #####\n\
+    #########\n\
+   #####|#####\n\
+    ####|####\n\
+      #}|{#\n\
+      #}|{#\n\
+       }|{\n\
+       }|{\n\
        }|{\n\
        ";
     Outfile.close();

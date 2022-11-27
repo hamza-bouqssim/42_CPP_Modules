@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 16:07:44 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/26 19:23:42 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/27 17:07:14 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ std::ostream &operator<<(std::ostream &output, const Form &_Form)
 }
 void Form::beSigned(Bureaucrat _Bureaucrat)
 {
-    if(_Bureaucrat.getGrade() <= this->gradeToSign)
+    if (_Bureaucrat.getGrade() <= this->gradeToSign)
         this->sign = true;
     else 
         throw Form::GradeTooLowException();
@@ -68,15 +68,16 @@ void Form::beSigned(Bureaucrat _Bureaucrat)
 Form::GradeTooHighException::GradeTooHighException()throw()
 {};
 
-Form::GradeTooLowException::GradeTooLowException(const char *_m) throw(): m(_m)
-{
-};
+Form::GradeTooLowException::GradeTooLowException() throw()
+{};
+
 const char* Form::GradeTooLowException::what() const throw()
 {
-    return m;
+    return "Grade To Low";
 };
 const char* Form::GradeTooHighException::what() const throw()
 {
     return "Grade To High";
 };
+
 Form::~Form(){};

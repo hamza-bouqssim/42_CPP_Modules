@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 15:14:00 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/26 15:45:21 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/27 17:16:56 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ class Bureaucrat{
     void incrementBureaucratGrade();
     void decrementBureaucratGrade();
     void signForm(Form &_Form);
+    void executeForm(Form const & form);
     
 };
 std::ostream &operator<< (std::ostream &output, const Bureaucrat &_Bureaucrat);

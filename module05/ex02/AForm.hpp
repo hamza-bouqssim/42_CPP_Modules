@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 16:07:47 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/26 19:21:13 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/27 17:06:07 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,8 @@ class Form{
         };
         class GradeTooLowException : public std::exception
         {
-            const char *m;
             public:
-            GradeTooLowException(const char *m = 0) throw();
+            GradeTooLowException() throw();
             const char* what() const throw();
         };
         //Methods:
