@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 16:08:00 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/26 18:02:39 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/27 20:42:19 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,5 @@ class  ShrubberyCreationForm : public Form
 	ShrubberyCreationForm &operator=(const ShrubberyCreationForm &_ShrubberyCreationForm);
 	~ShrubberyCreationForm();
 	void execute(const Bureaucrat &executor)const;
-
 };
 #endif
