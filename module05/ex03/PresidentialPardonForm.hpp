@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 20:38:35 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/27 20:42:16 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/28 22:24:09 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ class PresidentialPardonForm : public Form
    PresidentialPardonForm(const PresidentialPardonForm &_PresidentialPardonForm); 
    PresidentialPardonForm &operator= (const PresidentialPardonForm &_PresidentialPardonForm);
    ~PresidentialPardonForm();
-   	void execute(const Bureaucrat &executor)const;
+   void execute(const Bureaucrat &executor)const;
 };
 #endif

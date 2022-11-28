@@ -63,9 +63,10 @@ Form::GradeTooLowException::GradeTooLowException() throw()
 const char* Form::GradeTooHighException::what() const throw()
 {
     return "Grade To High";
-}
+};
 const char* Form::GradeTooLowException::what() const throw()
 {
     return "Grade To Low";
-}
+};
+
 Form::~Form(){};

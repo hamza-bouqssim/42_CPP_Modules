@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 15:14:06 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/21 13:58:14 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/28 23:05:27 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,15 @@
 #include "Form.hpp"
 int main()
 {
-   try {
-		Bureaucrat	_Bureaucrat("Office" ,1);
-		Form	_Form("Mo3ahada", 25, 50);
+  try {
+		Bureaucrat	bure("Office" , 151);
+		Form	obj("Mo3ahada", 10, 50);
 		try {
-			_Form.beSigned(_Bureaucrat);	
-		} 
-		catch (...)
-		{
+			obj.beSigned(bure);	
+		} catch (...) {
 		}
-		_Bureaucrat.signForm(_Form);
-	} 
-	catch (const std::exception& e)
-	{
+		bure.signForm(obj);
+	} catch (const std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}
     return 0;

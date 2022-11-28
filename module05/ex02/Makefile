@@ -6,7 +6,7 @@
 #    By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/19 15:14:08 by hbouqssi          #+#    #+#              #
-#    Updated: 2022/11/26 18:13:31 by hbouqssi         ###   ########.fr        #
+#    Updated: 2022/11/28 20:25:31 by hbouqssi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,8 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 CC = c++
 
-SRCS = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp
-HEADERS = Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp
+SRCS = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+HEADERS = Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
 OBJS = $(SRCS:.cpp=.o)
 
 
