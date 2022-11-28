@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 16:07:47 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/27 17:06:07 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/28 19:09:32 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Form{
         Form(const std::string name, const int gradeTosign, const int gradeToExec); 
         Form(const Form &_Form);
         Form &operator= (const Form &_Form);
-        ~Form();
+        virtual ~Form();
         //Nested Classes:
         class GradeTooHighException : public std::exception
         {

@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 18:27:14 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/11/27 20:40:09 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/11/28 16:54:59 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <iostream>
 #include "AForm.hpp"
 class RobotomyRequestForm: public Form{
+  public:
   RobotomyRequestForm();
   RobotomyRequestForm(std::string target);
   RobotomyRequestForm(const RobotomyRequestForm &_RobotomyRequestForm);
