@@ -15,8 +15,8 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 CC = c++
 
-SRCS = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp
-HEADERS = Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp
+SRCS = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp Intern.cpp
+HEADERS = Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp Intern.hpp
 OBJS = $(SRCS:.cpp=.o)
 
 
