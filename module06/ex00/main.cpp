@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 16:38:13 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/12/03 20:22:59 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/12/03 20:36:42 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,18 +102,21 @@ int main(int argc, char **argv)
             charToOtherTypes(argv[1]);
             return 0;
         }
+        
         else if (argv[1][i] == '.' && strrchr(argv[1], 'f'))
         { 
             puts("Float !...");
             floatToOtherTypes(argv[1]);
             return 0;
         }
+        
         else if (argv[1][i] == '.' && !strrchr(argv[1], 'f'))
         {
             puts("Double !...");
             doubleToOtherTypes(argv[1]);
             return 0;
         }
+            
         else if (isdigit(argv[1][i]) && !strchr(argv[1], '.'))
         {
             puts("Interger !...");
