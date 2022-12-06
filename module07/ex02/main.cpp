@@ -12,7 +12,23 @@
 
 #include "Array.hpp"
 
-int main()
-{
-    return 0;
+int main(){
+    
+    Array<int> ar0(10);
+
+    int anArray[10] = {44, 12, 14,65,7, 3456, 77,98,70, 56};
+
+	for (int i = 0; i < 10; i++)
+		ar0[i] = anArray[i];
+
+	std::cout << "Content Of The Array" << std::endl;
+	for (int i = 0; i < 10; i++)
+		std::cout << ar0[i] << " ";
+
+    std::cout << std::endl;
+	try {
+		ar0[-2] = 10;
+	} catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
 }
