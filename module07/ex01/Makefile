@@ -10,19 +10,19 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = arrays
+NAME = Iter
 CC = c++
 FLAGS = -Wall -Werror -Wextra
 RM = rm -rf
 
 SRCS = main.cpp
-HEADERS = whatever.hpp
+HEADERS = iter.hpp
 OBJS = $(SRCS:.cpp=.o)
 
 $(NAME): $(OBJS)
 		@$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
-%.o:%.cpp
+%.o:%.cpp $(HEADERS)
 		@$(CC) $(FLAGS) -c $< -o $@
 
 all: $(NAME)
