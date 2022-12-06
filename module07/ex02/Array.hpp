@@ -40,7 +40,6 @@ template <typename T>
 Array<T>::Array(unsigned int n)
 {
    this->array = new T[n];
-    
 }
 
 #endif
