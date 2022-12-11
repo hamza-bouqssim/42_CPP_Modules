@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 01:50:46 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/12/11 19:27:56 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/12/11 19:40:47 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,26 @@
 #include <stack>
 #include <deque>
 template <typename T>
-class MutankStack: public std::stack<T>
+class MutantStack: public std::stack<T>
 {
     public:
-        MutankStack();
-        ~MutankStack();
-        MutankStack(const MutankStack &_MutankStack)
+        MutantStack(){};
+        ~MutantStack(){};
+        MutantStack(const MutantStack &_MutantStack)
         {
-            *this = _MutankStack;
+            *this = _MutantStack;
         };
-        MutankStack &operator=(const MutankStack &_MutankStack)
+        MutantStack &operator=(const MutantStack &_MutantStack)
         {
-            *this =  _MutankStack;
+            *this =  _MutantStack;
             return *this;
         };
-        typedef typename std::stack<T>::container_type::iterator it;
-        it begin()
+        typedef typename std::stack<T>::container_type::iterator iterator;
+        iterator begin()
         {
             return this->c.begin();
         }
-        it end()
+        iterator end()
         {
             return this->c.end();
         }
