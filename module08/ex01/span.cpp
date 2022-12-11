@@ -6,7 +6,7 @@
 /*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 11:11:57 by hbouqssi          #+#    #+#             */
-/*   Updated: 2022/12/10 23:07:37 by hbouqssi         ###   ########.fr       */
+/*   Updated: 2022/12/11 01:06:34 by hbouqssi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,10 @@ int Span::shortestSpan(){
     int min_span = _numbers[1] - _numbers[0];
     for (size_t i = 1; i < _numbers.size(); i++) {
       int span = _numbers[i] - _numbers[i - 1];
-      if (span < min_span) {
+      if (span < min_span)
         min_span = span;
-      }
     }
     return min_span;
   }
+  
     
