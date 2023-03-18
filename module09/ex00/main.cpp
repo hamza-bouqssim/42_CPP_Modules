@@ -1,44 +1,68 @@
 #include "BitcoinExchange.hpp"
-
-int main(int argc, char *argv[])
+int isLeapYear(int year)
 {
-    (void)argv;
-    if (argc != 2)
-    {
-        std::cerr << "This Program Works With Only One Argument" << std::endl;
-        exit(EXIT_SUCCESS);
-    }
-    std::string file = "data.csv";
-    std::ifstream _data(file);
-    if(!_data)
-    {
-        std::cout << "a file with this name " << file << "is not exit !" << std::endl;
+    if(((year % 4 == 0 && year % 100 != 0) || year % 400 == 0))
+        return 1;
+    return 0;
+}
+
+int isValidDate(std::string _year, std::string _month, std::string _day)
+{
+    int year = atoi(_year.c_str());
+    int month = atoi(_month.c_str());
+    int day = atoi(_day.c_str());
+    if (year < 1 || month < 1 || month > 12)
         return 0;
+
+    if (day < 1)
+        return 0;
+
+    if (month == 2)
+    {
+        if (day > 29)
+            return 0;
+        if (day == 29 && !isLeapYear(year))
+            return 0;
     }
-   try
-   {
-    std::map<std::string, std::string>map;
+    else if (month == 4 || month == 6 || month == 9 || month == 11) {
+        if (day > 30)
+            return 0;
+    }
+    else {
+        if (day > 31)
+            return 0;
+    }
+
+    return 1;
+}
+
+void _error(std::string error)
+{
+    std::cerr << error << std::endl;
+    exit(EXIT_SUCCESS);
+}
+
+int main(int argc, char **argv)
+{
+   	if (argc != 2)
+        _error("Error: The Program Takes One Argument !");
+	std::string file = argv[1];
+	std::ifstream _data(file);
+
+   if(!_data)
+    _error("Error: Something Happend With Your File !");
+
     std::string line;
+
     while(getline(_data, line))
     {
-        std::string key = line.substr(0, 10);
-        std::string value = (line.substr(11));
-        map[key] = value;
+        if(isValidDate(line.substr(0, 4), line.substr(5, 2), line.substr(8, 2)))
+            std::cout << "valid" << std::endl;
+		else if ( isValidDate(line.substr(0, 4), line.substr(5, 2), line.substr(8, 2)) 
+			&& atof(line.substr(9, 1).c_str()) < 0 && atof(line.substr(9, 1).c_str()) > 1000)
+				std::cout << "Error: too large a number" << std::endl;
+        else
+            std::cout <<"Error: bad input => " << line.substr(0, 10) << std::endl;
     }
-    std::map<std::string, std::string>::iterator it;
-    it = map.begin();
-    while (it != map.end())
-    {
-        std::cout << it->first << "  " << it->second << std::endl;
-        it ++;
-    }
-   }
-   catch(const std::exception& e)
-   {
-    std::cerr << e.what() << '\n';
-   }
-   
-
-
-    return 0;
+	return 0;
 }
