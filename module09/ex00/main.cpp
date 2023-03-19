@@ -41,7 +41,12 @@ void _error(std::string error)
     std::cerr << error << std::endl;
     exit(EXIT_SUCCESS);
 }
-
+std::string remove_spaces(std::string line)
+{
+    std::string cline  = line;
+    cline.erase(std::remove(cline.begin(), cline.end(), ' '), cline.end());
+    return cline;
+}
 int main(int argc, char **argv)
 {
    	if (argc != 2)
@@ -56,13 +61,24 @@ int main(int argc, char **argv)
 
     while(getline(_data, line))
     {
-        if(isValidDate(line.substr(0, 4), line.substr(5, 2), line.substr(8, 2)))
-            std::cout << "valid" << std::endl;
-		else if ( isValidDate(line.substr(0, 4), line.substr(5, 2), line.substr(8, 2)) 
-			&& atof(line.substr(9, 1).c_str()) < 0 && atof(line.substr(9, 1).c_str()) > 1000)
-				std::cout << "Error: too large a number" << std::endl;
-        else
-            std::cout <<"Error: bad input => " << line.substr(0, 10) << std::endl;
+        try
+        {
+            std::string cline = remove_spaces(line);
+            if (cline.size() < 12)
+                std::cerr << "Error: bad input => " + cline.substr(0, 10) << std::endl;
+            else if (atof(cline.substr(11, -1).c_str()) < 0)
+                std::cerr << "Error: not a positive number." << std::endl;
+            else if (atof(cline.substr(11, -1).c_str()) < 0 || atof(cline.substr(11, -1).c_str()) > 1000)
+                std::cerr << "Error: too large a number" << std::endl;
+            else if (isValidDate(cline.substr(0, 4), cline.substr(5, 2), cline.substr(8, 2)))
+                std::cout << "valid" << std::endl;
+            
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << '\n';
+        }
+        
     }
 	return 0;
 }
