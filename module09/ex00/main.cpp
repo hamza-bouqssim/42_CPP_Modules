@@ -45,6 +45,24 @@ std::string remove_spaces(std::string line)
 {
     std::string cline  = line;
     cline.erase(std::remove(cline.begin(), cline.end(), ' '), cline.end());
+    int dashCount = 0;
+    int pipeCount = 0;
+
+    for (size_t i = 0; i < cline.length(); i++) {
+        if (cline[i] == '-') {
+            dashCount++;
+        }
+        else if (cline[i] == '|') {
+            pipeCount++;
+        }
+    }
+
+    if (dashCount < 2 || dashCount > 2) {
+        _error("there must be two of  Dashes");
+    }
+    else if (pipeCount > 1) {
+        _error("there must be one Pipe");
+    }
     return cline;
 }
 int main(int argc, char **argv)
@@ -64,7 +82,7 @@ int main(int argc, char **argv)
         try
         {
             std::string cline = remove_spaces(line);
-            if (cline.size() < 12)
+            if (cline.size() < 12 || !isValidDate(cline.substr(0, 4), cline.substr(5, 2), cline.substr(8, 2)))
                 std::cerr << "Error: bad input => " + cline.substr(0, 10) << std::endl;
             else if (atof(cline.substr(11, -1).c_str()) < 0)
                 std::cerr << "Error: not a positive number." << std::endl;
