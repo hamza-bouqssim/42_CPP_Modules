@@ -45,26 +45,27 @@ std::string remove_spaces(std::string line)
 {
     std::string cline  = line;
     cline.erase(std::remove(cline.begin(), cline.end(), ' '), cline.end());
+    return cline;
+}
+
+void check_dash_and_pipe(std::string cline)
+{
     int dashCount = 0;
     int pipeCount = 0;
 
     for (size_t i = 0; i < cline.length(); i++) {
-        if (cline[i] == '-') {
+        if (cline[i] == '-')
             dashCount++;
-        }
-        else if (cline[i] == '|') {
+        else if (cline[i] == '|')
             pipeCount++;
-        }
     }
 
-    if (dashCount < 2 || dashCount > 2) {
-        _error("there must be two of  Dashes");
-    }
-    else if (pipeCount > 1) {
-        _error("there must be one Pipe");
-    }
-    return cline;
+    if (dashCount < 2 || dashCount > 2)
+        _error("There Must Be Two Dashes\nVALIDATED FORMADT => YYYY-MM-DD | VALUE");
+    else if (pipeCount >= 1)
+        _error("There Must Be One Pipe\n YYYY-MM-DD | VALUE");
 }
+
 int main(int argc, char **argv)
 {
    	if (argc != 2)
