@@ -61,10 +61,11 @@ void check_dash_and_pipe(std::string cline)
     }
 
     if (dashCount < 2 || dashCount > 2)
-        _error("There Must Be Two Dashes\nVALIDATED FORMADT => YYYY-MM-DD | VALUE");
-    else if (pipeCount >= 1)
-        _error("There Must Be One Pipe\n YYYY-MM-DD | VALUE");
+        _error("There Must Be Two Dashes");
+    else if (pipeCount > 1)
+        _error("There Must Be One Pipe");
 }
+
 
 int main(int argc, char **argv)
 {
@@ -81,7 +82,7 @@ int main(int argc, char **argv)
     std::string line2;
     std::map<std::string, std::string>map;
 
-    while(getline(db, line2))
+    while (getline(db, line2))
     {
         try
         {
@@ -95,7 +96,7 @@ int main(int argc, char **argv)
         }
     }
 
-    while(getline(_data, line))
+    while (getline(_data, line))
     {
         try
         {
@@ -105,13 +106,25 @@ int main(int argc, char **argv)
             else if (atof(cline.substr(11, -1).c_str()) < 0)
                 std::cerr << "Error: not a positive number." << std::endl;
             else if (atof(cline.substr(11, -1).c_str()) < 0 || atof(cline.substr(11, -1).c_str()) > 1000)
-                std::cerr << "Error: too large a number" << std::endl;
+                std::cerr << "Error: too large a number." << std::endl;
             else if (isValidDate(cline.substr(0, 4), cline.substr(5, 2), cline.substr(8, 2)))
             {
                 std::string date = cline.substr(0, 10);
                 std::map<std::string, std::string>::iterator it = map.find(date);
-                if (it == map.end())
-                    std::cerr << "Error: date not found in database." << std::endl;
+               if (it == map.end())
+               {
+                    it = map.lower_bound(date);
+                    if (it->first == "2009-01-02")
+                    {
+                        std::cerr <<"Error: Date You're Looking Or The Lower Date Doesn't Exit In Your Database" << std::endl;
+                        continue;
+
+                    }
+                    std::string lower_value = (--it)->second;
+                    float db_value = atof(lower_value.c_str());
+                    float input_value = atof(cline.substr(11, -1).c_str());
+                    std::cout << date + " => " << input_value << " = " << input_value * db_value << std::endl;
+               }
                 else
                 {
                     std::string v = map[date];
