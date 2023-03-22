@@ -70,13 +70,30 @@ int main(int argc, char **argv)
 {
    	if (argc != 2)
         _error("Error: The Program Takes One Argument !");
-	std::string file = argv[1];
-	std::ifstream _data(file);
-
-   if(!_data)
+	std::string input = argv[1];
+	std::ifstream _data(input);
+    std::string file = "data.csv";
+    std::ifstream db(file);
+   if(!_data || !db)
     _error("Error: Something Happend With Your File !");
 
     std::string line;
+    std::string line2;
+    std::map<std::string, std::string>map;
+
+    while(getline(db, line2))
+    {
+        try
+        {
+            std::string date = line2.substr(0, 10);
+            std::string value = line2.substr(11, -1);
+            map[date] = value;
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << '\n';
+        }
+    }
 
     while(getline(_data, line))
     {
@@ -90,7 +107,19 @@ int main(int argc, char **argv)
             else if (atof(cline.substr(11, -1).c_str()) < 0 || atof(cline.substr(11, -1).c_str()) > 1000)
                 std::cerr << "Error: too large a number" << std::endl;
             else if (isValidDate(cline.substr(0, 4), cline.substr(5, 2), cline.substr(8, 2)))
-                std::cout << "valid" << std::endl;
+            {
+                std::string date = cline.substr(0, 10);
+                std::map<std::string, std::string>::iterator it = map.find(date);
+                if (it == map.end())
+                    std::cerr << "Error: date not found in database." << std::endl;
+                else
+                {
+                    std::string v = map[date];
+                    float db_value = atof(v.c_str());
+                    float input_value = atof(cline.substr(11, -1).c_str());
+                    std::cout << cline.substr(0, 10) + " => " << input_value << " = " << input_value * db_value << std::endl;
+                }
+            }
             
         }
         catch(const std::exception& e)
