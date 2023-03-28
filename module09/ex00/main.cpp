@@ -35,7 +35,10 @@ int main(int argc, char **argv)
         try
         {
             std::string cline =  btc.remove_spaces(line);
-            if (cline.size() < 12 || ! btc.isValidDate(cline.substr(0, 4), cline.substr(5, 2), cline.substr(8, 2)))
+            if (btc.check_dash_and_pipe(cline))
+                continue;
+
+            if (cline.size() < 12 || !btc.isValidDate(cline.substr(0, 4), cline.substr(5, 2), cline.substr(8, 2)))
                 std::cerr << "Error: bad input => " + cline.substr(0, 10) << std::endl;
             else if (atof(cline.substr(11, -1).c_str()) < 0)
                 std::cerr << "Error: not a positive number." << std::endl;

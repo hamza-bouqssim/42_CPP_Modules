@@ -10,17 +10,18 @@ BitcoinExchange::~BitcoinExchange()
 };
 int BitcoinExchange::isLeapYear(int year)
 {
-    if(((year % 4 == 0 && year % 100 != 0) || year % 400 == 0))
-        return 1;
-    return 0;
+    return (((year % 4 == 0 && year % 100 != 0) || year % 400 == 0));
+
 }
 
 int BitcoinExchange::isValidDate(std::string _year, std::string _month, std::string _day)
 {
+    if( _year.size() != 4 || (_month.size() > 2 || _month.size() < 2) || (_day.size() > 2 || _day.size() < 2))
+        return 0;
     int year = atoi(_year.c_str());
     int month = atoi(_month.c_str());
     int day = atoi(_day.c_str());
-    if (year < 1 || month < 1 || month > 12)
+    if (year < 2009 || month < 1 || month > 12)
         return 0;
 
     if (day < 1)
@@ -57,7 +58,7 @@ std::string BitcoinExchange::remove_spaces(std::string line)
     return cline;
 }
 
-void BitcoinExchange::check_dash_and_pipe(std::string cline)
+int BitcoinExchange::check_dash_and_pipe(std::string cline)
 {
     int dashCount = 0;
     int pipeCount = 0;
@@ -70,7 +71,14 @@ void BitcoinExchange::check_dash_and_pipe(std::string cline)
     }
 
     if (dashCount < 2 || dashCount > 2)
-        _error("There Must Be Two Dashes");
+    {
+        std::cerr << "There Must Be Two Dashes" << std::endl;
+        return 1;
+    }
     else if (pipeCount > 1)
-        _error("There Must Be One Pipe");
+    {
+        std::cerr << "There Must Be One Pipe" << std::endl;
+        return 1;
+    }
+    return 0;
 }
