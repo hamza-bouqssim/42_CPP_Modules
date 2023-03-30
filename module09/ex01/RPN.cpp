@@ -37,7 +37,15 @@ void    RPN::applyOperator(std::stack<int> &stack, char argument)
     if (argument == '*')
         stack.push(number2 * number1);
     if (argument == '/')
-        stack.push(number2 / number1);
+    {
+        if(number1 != 0)
+            stack.push(number2 / number1);
+        else
+        {
+            std::cerr << "Error: Cannot Divide The Number" << std::endl;
+            exit(0);
+        }
+    }
     if (argument == '+')
         stack.push(number2 + number1);
     if (argument == '-')
