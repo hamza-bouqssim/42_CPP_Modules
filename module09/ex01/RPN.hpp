@@ -8,5 +8,12 @@
 
 class RPN {
     public:
+        RPN();
+        RPN(const RPN &_RPN);
+        RPN &operator= (const RPN &_RPN);
+        ~RPN();
+
+        //Methods:
+        void applyOperator(std::stack<int> &stack, char argument);
 };
 #endif
