@@ -1,7 +1,5 @@
 #include "PmergeMe.hpp"
 
-
-
 int main(int argc, char** argv)
 {
     PmergeMe P;
@@ -27,6 +25,8 @@ int main(int argc, char** argv)
         v.push_back(n);
         d.push_back(n);
     }
+    P.mergeSortv(v);
+    P.mergeSortd(d);
     for (int i = 0; i < (int)v.size(); i++) {
         std::cout << v[i] << " ";
     }
@@ -35,6 +35,5 @@ int main(int argc, char** argv)
     {
         std::cout << d[i] << " ";
     }
-
     return 0;
 }
