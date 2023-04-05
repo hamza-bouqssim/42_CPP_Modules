@@ -29,6 +29,36 @@ int PmergeMe::is_number(std::string arg)
     }
     return 1;
 }
+void PmergeMe::insertionSort(std::vector<int>& vector)
+{
+    int current;
+    for(int i = 1; i < (int)vector.size(); i++)
+    {
+        current = vector[i];
+        int j = i - 1;
+        while(j >= 0 && vector[j] > current)
+        {
+            vector[j + 1] = vector[j];
+            j--;
+        } 
+        vector[j + 1] = current;
+    }
+}
+void PmergeMe::insertionSort(std::deque<int>& deque)
+{
+    int current;
+    for(int i = 1; i < (int)deque.size(); i++)
+    {
+        current = deque[i];
+        int j = i - 1;
+        while(j >= 0 && deque[j] > current)
+        {
+            deque[j + 1] = deque[j];
+            j--;
+        } 
+        deque[j + 1] = current;
+    }
+}
 
 void PmergeMe::mergev(std::vector<int>&leftArray, std::vector<int>&rightArray, std::vector<int>&vector)
 {
@@ -70,6 +100,11 @@ void PmergeMe::mergeSortv(std::vector<int> &vector)
     std::vector<int>rightArray(vector.size() - (vector.size() / 2));
     int i = 0;
     int j = 0;
+    if (vector.size() <= 15)
+    {
+        insertionSort(vector);
+        return ;
+    }
     while(i < (int)vector.size())
     {
         if (i < (int)vector.size() / 2)
@@ -125,6 +160,11 @@ void PmergeMe::mergeSortd(std::deque<int> &deque)
     std::deque<int>rightArray(deque.size() - (deque.size() / 2));
     int i = 0;
     int j = 0;
+    if (deque.size() <= 15)
+    {
+        insertionSort(deque);
+        return ;
+    }
     while(i < (int)deque.size())
     {
         if (i < (int)deque.size() / 2)

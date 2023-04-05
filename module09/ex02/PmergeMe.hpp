@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <deque>
+#include <ctime>
 class PmergeMe{
     public:
     PmergeMe();
@@ -17,6 +18,8 @@ class PmergeMe{
     void merged(std::deque<int>&leftArray, std::deque<int>&rightArray, std::deque<int>&deque);
     void mergeSortv(std::vector<int> &vector);
     void mergeSortd(std::deque<int> &deque);
+    void insertionSort(std::vector<int> &vector);
+    void insertionSort(std::deque<int> &deque);
 
 };
 

@@ -1,7 +1,23 @@
 #include "PmergeMe.hpp"
+void printvector(std::vector<int> &vector, std::string string)
+{
+    std::cout << string + "  ";
+    for (int i = 0; i < (int)vector.size(); i++) {
+        std::cout << vector[i] << " ";
+    }
+}
+
+void printdeque(std::deque<int> &deque, std::string string)
+{
+    std::cout << string + "  ";
+    for (int i = 0; i < (int)deque.size(); i++) {
+        std::cout << deque[i] << " ";
+    }
+}
 
 int main(int argc, char** argv)
 {
+    clock_t t;
     PmergeMe P;
     std::vector<int> v;
     std::deque<int>d;
@@ -25,15 +41,19 @@ int main(int argc, char** argv)
         v.push_back(n);
         d.push_back(n);
     }
-    P.mergeSortv(v);
-    P.mergeSortd(d);
-    for (int i = 0; i < (int)v.size(); i++) {
-        std::cout << v[i] << " ";
-    }
+    t = clock();
+    printvector(v, "Before: ");
     std::cout << std::endl;
-    for(int i = 0; i < (int)d.size(); i++)
-    {
-        std::cout << d[i] << " ";
-    }
+    P.mergeSortv(v);
+    t = clock() - t;
+    double timeVec = ((double)t) / CLOCKS_PER_SEC;
+    t = clock();
+    P.mergeSortd(d);
+    t = clock() - t;
+    double timeDeq = ((double)t) / CLOCKS_PER_SEC;
+    printvector(v, "After: ");
+    std::cout << std::endl;
+    std::cout << "Time to process a range of " << v.size() << " elements with std::vector : " << std::fixed << timeVec << std::endl;
+    std::cout << "Time to process a range of " << d.size() << " elements with std::deque : " << std::fixed << timeDeq << std::endl;
     return 0;
 }
