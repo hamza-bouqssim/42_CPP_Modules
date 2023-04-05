@@ -4,13 +4,17 @@ int main(int argc, char **argv)
 {
     BitcoinExchange btc;
    	if (argc != 2)
-        btc._error("Error: The Program Takes One Argument !");
+        btc._error("Error: could not open file.");
 	std::string input = argv[1];
 	std::ifstream _data(input);
     std::string file = "data.csv";
     std::ifstream db(file);
-   if(!_data || !db)
-     btc._error("Error: Something Happend With Your File !");
+    if(!_data.is_open() ||  _data.peek() == std::ifstream::traits_type::eof())
+        btc._error("Error: Something Happend With Your File !");
+    if(db.peek() == std::ifstream::traits_type::eof() || !db.is_open() )
+        btc._error("Error: Something Happend With Your DataBase !");
+
+
 
     std::string line;
     std::string line2;
@@ -35,12 +39,12 @@ int main(int argc, char **argv)
         try
         {
             std::string cline =  btc.remove_spaces(line);
-            if (btc.check_dash_and_pipe(cline))
+            if (cline == "exist")
                 continue;
-
-            if (cline.size() < 12 || !btc.isValidDate(cline.substr(0, 4), cline.substr(5, 2), cline.substr(8, 2)))
+            else if (cline.size() < 12 || !btc.isValidDate(cline.substr(0, 4), cline.substr(5, 2), cline.substr(8, 2))
+                || btc.check_dash_and_pipe(cline) == -1)
                 std::cerr << "Error: bad input => " + cline.substr(0, 10) << std::endl;
-            else if (atof(cline.substr(11, -1).c_str()) < 0)
+            else if (atof(cline.substr(11, -1).c_str()) < 0 && btc.check_dash_and_pipe(cline))
                 std::cerr << "Error: not a positive number." << std::endl;
             else if (atof(cline.substr(11, -1).c_str()) < 0 || atof(cline.substr(11, -1).c_str()) > 1000)
                 std::cerr << "Error: too large a number." << std::endl;
@@ -53,7 +57,7 @@ int main(int argc, char **argv)
                     it = map.lower_bound(date);
                     if (it->first == "2009-01-02")
                     {
-                        std::cerr <<"Error: Date You're Looking Or The Lower Date Doesn't Exit In Your Database" << std::endl;
+                        std::cout <<"Error: Date You're Looking Or The Lower Date Doesn't Exit In Your Database" << std::endl;
                         continue;
                     }
                     std::string lower_value = (--it)->second;
