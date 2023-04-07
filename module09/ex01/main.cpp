@@ -28,7 +28,7 @@ int main(int argc, char **argv)
         }
         if (stack.size() != 1)
         {
-            std::cerr << "Error: Check Your Input !" << std::endl;
+            std::cout << "Error: Check Your Input !" << std::endl;
             return (0);
         }
         std::cout << stack.top() << std::endl;

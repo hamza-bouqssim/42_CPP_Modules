@@ -11,7 +11,7 @@ int main(int argc, char **argv)
     std::ifstream db(file);
     if(!_data.is_open() ||  _data.peek() == std::ifstream::traits_type::eof())
         btc._error("Error: Something Happend With Your File !");
-    if(db.peek() == std::ifstream::traits_type::eof() || !db.is_open() )
+    if(db.peek() == std::ifstream::traits_type::eof() || !db.is_open())
         btc._error("Error: Something Happend With Your DataBase !");
 
 
@@ -42,13 +42,13 @@ int main(int argc, char **argv)
             if (cline == "exist")
                 continue;
             else if (cline.size() < 12 || !btc.isValidDate(cline.substr(0, 4), cline.substr(5, 2), cline.substr(8, 2))
-                || btc.check_dash_and_pipe(cline) == -1)
-                std::cerr << "Error: bad input => " + cline.substr(0, 10) << std::endl;
+                || btc.check_dash_and_pipe(cline) == -1 || btc.floating_point(cline) == -1)
+                std::cout << "Error: bad input => " + cline.substr(0, 10) << std::endl;
             else if (atof(cline.substr(11, -1).c_str()) < 0 && btc.check_dash_and_pipe(cline))
-                std::cerr << "Error: not a positive number." << std::endl;
+                std::cout << "Error: not a positive number." << std::endl;
             else if (atof(cline.substr(11, -1).c_str()) < 0 || atof(cline.substr(11, -1).c_str()) > 1000)
-                std::cerr << "Error: too large a number." << std::endl;
-            else if ( btc.isValidDate(cline.substr(0, 4), cline.substr(5, 2), cline.substr(8, 2)))
+                std::cout << "Error: too large a number." << std::endl;
+            else if (btc.isValidDate(cline.substr(0, 4), cline.substr(5, 2), cline.substr(8, 2)))
             {
                 std::string date = cline.substr(0, 10);
                 std::map<std::string, std::string>::iterator it = map.find(date);
@@ -77,7 +77,7 @@ int main(int argc, char **argv)
         }
         catch(const std::exception& e)
         {
-            std::cerr << e.what() << '\n';
+            std::cout << e.what() << '\n';
         }
         
     }

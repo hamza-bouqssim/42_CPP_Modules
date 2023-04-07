@@ -16,6 +16,7 @@ class BitcoinExchange{
         void _error(std::string error);
         std::string remove_spaces(std::string line);
         int check_dash_and_pipe(std::string cline);
+        int floating_point(std::string line);
 };
 
 #endif
