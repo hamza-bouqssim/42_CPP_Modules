@@ -52,7 +52,7 @@ void BitcoinExchange::_error(std::string error)
     exit(EXIT_SUCCESS);
 }
 
-std::string BitcoinExchange::remove_spaces( std::string line)
+std::string BitcoinExchange::skip_spaces(std::string line)
 {
     if((line.find("date | value") != std::string::npos))
         return "exist";
@@ -61,10 +61,12 @@ std::string BitcoinExchange::remove_spaces( std::string line)
     while(++i < (int)cline.size())
     {
         if (std::isspace(cline[i]))
-            cline.erase(i, 1);
+            i++;
     }
     return cline;
 }
+
+
 
 int BitcoinExchange::check_dash_and_pipe(std::string cline)
 {
@@ -77,7 +79,7 @@ int BitcoinExchange::check_dash_and_pipe(std::string cline)
         else if (cline[i] == '|')
             pipeCount++;
     }
-    if(cline.substr(11, 1) == "-")
+    if (cline.substr(13).find('-') != std::string::npos)
         return 1;
     if (dashCount < 2 || dashCount > 2)
         return -1;
