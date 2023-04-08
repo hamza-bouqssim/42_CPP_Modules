@@ -14,14 +14,19 @@ int main(int argc, char **argv)
         argument = (argv[1]);
         while(argument[++i])
         {
-            if (argument[i] == ' ')
+            while(argument[i] == ' ')
                 i++;
-           if (isdigit(argument[i]))
-           {
-                int num = argument[i] - '0';
-                if (num >= 1 && num <= 9)
-                stack.push(num);
-           }
+            if (isdigit(argument[i]))
+            {
+                if(isdigit(argument[i]) && isdigit(argument[i + 1]))
+                {
+                    std::cout << "Error" << std::endl;
+                    exit(0);
+                }
+                    int num = argument[i] - '0';
+                    if (num >= 1 && num <= 9)
+                    stack.push(num);
+            }
             else if (argument[i] == '+' || argument[i] == '-' || argument[i] == '*' || argument[i] == '/')
                 rpn.applyOperator(stack, argument[i]);
             else
