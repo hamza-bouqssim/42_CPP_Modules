@@ -16,8 +16,12 @@ int main(int argc, char **argv)
         {
             if (argument[i] == ' ')
                 i++;
-            if (isdigit(argument[i]))
-                stack.push(atoi(&argument[i]));
+           if (isdigit(argument[i]))
+           {
+                int num = argument[i] - '0';
+                if (num >= 1 && num <= 9)
+                stack.push(num);
+           }
             else if (argument[i] == '+' || argument[i] == '-' || argument[i] == '*' || argument[i] == '/')
                 rpn.applyOperator(stack, argument[i]);
             else
