@@ -24,7 +24,7 @@ int main(int argc, char **argv)
                     exit(0);
                 }
                     int num = argument[i] - '0';
-                    if (num >= 1 && num <= 9)
+                    if (num >= 0 && num <= 9)
                     stack.push(num);
             }
             else if (argument[i] == '+' || argument[i] == '-' || argument[i] == '*' || argument[i] == '/')
