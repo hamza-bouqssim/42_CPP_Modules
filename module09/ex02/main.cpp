@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/11 15:48:42 by hbouqssi          #+#    #+#             */
+/*   Updated: 2023/04/11 15:48:43 by hbouqssi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PmergeMe.hpp"
 void printvector(std::vector<int> &vector, std::string string)
 {
@@ -51,9 +63,9 @@ int main(int argc, char** argv)
     P.mergeSortd(d);
     t = clock() - t;
     double timeDeq = ((double)t) / CLOCKS_PER_SEC;
-    printvector(v, "After: ");
+    printvector(v, "After:  ");
     std::cout << std::endl;
     std::cout << "Time to process a range of " << v.size() << " elements with std::vector : " << std::fixed << timeVec << std::endl;
-    std::cout << "Time to process a range of " << d.size() << " elements with std::deque : " << std::fixed << timeDeq << std::endl;
+    std::cout << "Time to process a range of " << d.size() << " elements with std::deque  : " << std::fixed << timeDeq << std::endl;
     return 0;
 }

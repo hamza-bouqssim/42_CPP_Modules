@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/11 15:48:14 by hbouqssi          #+#    #+#             */
+/*   Updated: 2023/04/11 15:48:15 by hbouqssi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "RPN.hpp"
 int main(int argc, char **argv)
 {
@@ -14,13 +26,12 @@ int main(int argc, char **argv)
         argument = (argv[1]);
         while(argument[++i])
         {
-            while(argument[i] == ' ')
-                i++;
+            if (argument[i] == ' ') continue;
             if (isdigit(argument[i]))
             {
                 if(isdigit(argument[i]) && isdigit(argument[i + 1]))
                 {
-                    std::cout << "Error" << std::endl;
+                    std::cout << "tttError" << std::endl;
                     exit(0);
                 }
                     int num = argument[i] - '0';
@@ -31,7 +42,8 @@ int main(int argc, char **argv)
                 rpn.applyOperator(stack, argument[i]);
             else
             {
-                std::cout << "Error" << std::endl;
+                std::cout << argument[i] << std::endl;
+                std::cout << "eeError" << std::endl;
                 return (0);
             }
         }

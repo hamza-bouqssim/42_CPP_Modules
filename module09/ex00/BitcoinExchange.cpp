@@ -1,8 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/11 15:47:49 by hbouqssi          #+#    #+#             */
+/*   Updated: 2023/04/11 15:54:49 by hbouqssi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "BitcoinExchange.hpp"
 
 BitcoinExchange::BitcoinExchange()
 {
-
 };
 BitcoinExchange::~BitcoinExchange()
 {
@@ -11,7 +22,6 @@ BitcoinExchange::~BitcoinExchange()
 int BitcoinExchange::isLeapYear(int year)
 {
     return (((year % 4 == 0 && year % 100 != 0) || year % 400 == 0));
-
 }
 
 int BitcoinExchange::isValidDate(std::string _year, std::string _month, std::string _day)

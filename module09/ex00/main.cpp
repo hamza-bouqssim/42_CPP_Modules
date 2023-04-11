@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/11 15:47:35 by hbouqssi          #+#    #+#             */
+/*   Updated: 2023/04/11 16:05:12 by hbouqssi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "BitcoinExchange.hpp"
 
 int is_all_digits(const std::string& str)
@@ -18,9 +30,9 @@ int main(int argc, char **argv)
 	std::ifstream _data(input);
     std::string file = "data.csv";
     std::ifstream db(file);
-    if(!_data.is_open() ||  _data.peek() == std::ifstream::traits_type::eof())
+    if(!_data.is_open() ||  _data.peek() == EOF)
         btc._error("Error: Something Happend With Your File !");
-    if(db.peek() == std::ifstream::traits_type::eof() || !db.is_open())
+    if(db.peek() == EOF || !db.is_open())
         btc._error("Error: Something Happend With Your DataBase !");
     std::string line, line2;
     std::map<std::string, std::string>map;
@@ -38,7 +50,6 @@ int main(int argc, char **argv)
             std::cerr << e.what() << '\n';
         }
     }
-
     while (getline(_data, line))
     {
         try
@@ -78,7 +89,7 @@ int main(int argc, char **argv)
                     it = map.lower_bound(date);
                     if (it->first == "2009-01-02")
                     {
-                        std::cout <<"Error: Date You're Looking Or The Lower Date Doesn't Exit In Your Database" << std::endl;
+                        std::cout << "Error: Date You're Looking Or The Lower Date Doesn't Exit In Your Database" << std::endl;
                         continue;
                     }
                     std::string lower_value = (--it)->second;
@@ -99,7 +110,6 @@ int main(int argc, char **argv)
         {
             std::cout << e.what() << '\n';
         }
-        
     }
 	return 0;
 }

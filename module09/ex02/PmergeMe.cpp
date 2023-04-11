@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PmergeMe.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hbouqssi <hbouqssi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/11 15:48:56 by hbouqssi          #+#    #+#             */
+/*   Updated: 2023/04/11 15:48:57 by hbouqssi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PmergeMe.hpp"
 PmergeMe::PmergeMe()
 {
@@ -152,6 +164,7 @@ void PmergeMe::merged(std::deque<int>&leftArray, std::deque<int>&rightArray, std
         right++;
     }
 }
+
 void PmergeMe::mergeSortd(std::deque<int> &deque)
 {
     if (deque.size() <= 1)
